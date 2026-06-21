@@ -8,7 +8,6 @@ package za.ac.cput.domain;
    Date: 21 June 2026
 */
 
-
 public class Specification {
 
     private Long specificationId;

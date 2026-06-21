@@ -3,7 +3,7 @@ package za.ac.cput.domain;
 /* Category.java
    Category POJO class
 
-   Author: Lerato(222381582)
+   Author: Lerato (222381582)
 
    Date: 21 June 2026
 */
