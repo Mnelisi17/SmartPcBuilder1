@@ -1,39 +1,43 @@
+/* CartItem.java
+   CartItem POJO entity implementing Builder Pattern
+   Author: Lesego Lebese (YourStudentNumber)
+   Date: 22 June 2026 */
 
 package za.ac.cput.domain;
 
-public class OrderItem {
-    private String orderItemId;
+public class CartItem {
+    private String cartItemId;
     private int quantity;
     private double unitPrice;
 
-    protected OrderItem() {}
+    protected CartItem() {}
 
-    protected OrderItem(Builder builder) {
-        this.orderItemId = builder.orderItemId;
+    protected CartItem(Builder builder) {
+        this.cartItemId = builder.cartItemId;
         this.quantity = builder.quantity;
         this.unitPrice = builder.unitPrice;
     }
 
-    public String getOrderItemId() { return orderItemId; }
+    public String getCartItemId() { return cartItemId; }
     public int getQuantity() { return quantity; }
     public double getUnitPrice() { return unitPrice; }
 
     @Override
     public String toString() {
-        return "OrderItem{" +
-                "orderItemId='" + orderItemId + '\'' +
+        return "CartItem{" +
+                "cartItemId='" + cartItemId + '\'' +
                 ", quantity=" + quantity +
                 ", unitPrice=" + unitPrice +
                 '}';
     }
 
     public static class Builder {
-        private String orderItemId;
+        private String cartItemId;
         private int quantity;
         private double unitPrice;
 
-        public Builder setOrderItemId(String orderItemId) {
-            this.orderItemId = orderItemId;
+        public Builder setCartItemId(String cartItemId) {
+            this.cartItemId = cartItemId;
             return this;
         }
 
@@ -47,15 +51,15 @@ public class OrderItem {
             return this;
         }
 
-        public Builder copy(OrderItem orderItem) {
-            this.orderItemId = orderItem.orderItemId;
-            this.quantity = orderItem.quantity;
-            this.unitPrice = orderItem.unitPrice;
+        public Builder copy(CartItem cartItem) {
+            this.cartItemId = cartItem.cartItemId;
+            this.quantity = cartItem.quantity;
+            this.unitPrice = cartItem.unitPrice;
             return this;
         }
 
-        public OrderItem build() {
-            return new OrderItem(this);
+        public CartItem build() {
+            return new CartItem(this);
         }
     }
 }
