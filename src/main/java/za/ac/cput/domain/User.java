@@ -3,7 +3,7 @@
    Author: Lesego Lebese (222371196)
    Date: 21 June 2026 */
 
-package cput.ac.za.domain;
+package za.ac.cput.domain;
 
 public class User {
     private String userId;
