@@ -9,10 +9,9 @@ package za.ac.cput.domain;
 */
 
 public class OrderItem {
-
-    private Long orderItemId;
+    private String orderItemId;
     private int quantity;
-    private Double unitPrice;
+    private double unitPrice;
 
     protected OrderItem() {}
 
@@ -22,33 +21,25 @@ public class OrderItem {
         this.unitPrice = builder.unitPrice;
     }
 
-    public Long getOrderItemId() {
-        return orderItemId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public Double getUnitPrice() {
-        return unitPrice;
-    }
+    public String getOrderItemId() { return orderItemId; }
+    public int getQuantity() { return quantity; }
+    public double getUnitPrice() { return unitPrice; }
 
     @Override
     public String toString() {
         return "OrderItem{" +
-                "orderItemId=" + orderItemId +
+                "orderItemId='" + orderItemId + '\'' +
                 ", quantity=" + quantity +
                 ", unitPrice=" + unitPrice +
                 '}';
     }
 
     public static class Builder {
-        private Long orderItemId;
+        private String orderItemId;
         private int quantity;
-        private Double unitPrice;
+        private double unitPrice;
 
-        public Builder setOrderItemId(Long orderItemId) {
+        public Builder setOrderItemId(String orderItemId) {
             this.orderItemId = orderItemId;
             return this;
         }
@@ -58,7 +49,7 @@ public class OrderItem {
             return this;
         }
 
-        public Builder setUnitPrice(Double unitPrice) {
+        public Builder setUnitPrice(double unitPrice) {
             this.unitPrice = unitPrice;
             return this;
         }

@@ -1,63 +1,58 @@
-/* UserFactory.java
-   UserFactory POJO entity implementing Builder Pattern
+/* Admin.java
+   Admin POJO entity implementing Builder Pattern
    Author: Lesego Lebese (222371196)
    Date: 21 June 2026 */
 
 package za.ac.cput.domain;
 
-public class User {
-    private String userId;
+public class Admin {
+    private String adminId;
     private String firstName;
     private String middleName;
     private String lastName;
     private String email;
     private String password;
-    private String phoneNumber;
 
-    protected User() {}
+    protected Admin() {}
 
-    protected User(Builder builder) {
-        this.userId = builder.userId;
+    protected Admin(Builder builder) {
+        this.adminId = builder.adminId;
         this.firstName = builder.firstName;
         this.middleName = builder.middleName;
         this.lastName = builder.lastName;
         this.email = builder.email;
         this.password = builder.password;
-        this.phoneNumber = builder.phoneNumber;
     }
 
-    public String getUserId() { return userId; }
+    public String getAdminId() { return adminId; }
     public String getFirstName() { return firstName; }
     public String getMiddleName() { return middleName; }
     public String getLastName() { return lastName; }
     public String getEmail() { return email; }
     public String getPassword() { return password; }
-    public String getPhoneNumber() { return phoneNumber; }
 
     @Override
     public String toString() {
-        return "UserFactory{" +
-                "userId='" + userId + '\'' +
+        return "Admin{" +
+                "adminId='" + adminId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 
     public static class Builder {
-        private String userId;
+        private String adminId;
         private String firstName;
         private String middleName;
         private String lastName;
         private String email;
         private String password;
-        private String phoneNumber;
 
-        public Builder setUserId(String userId) {
-            this.userId = userId;
+        public Builder setAdminId(String adminId) {
+            this.adminId = adminId;
             return this;
         }
 
@@ -86,24 +81,18 @@ public class User {
             return this;
         }
 
-        public Builder setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
+        public Builder copy(Admin admin) {
+            this.adminId = admin.adminId;
+            this.firstName = admin.firstName;
+            this.middleName = admin.middleName;
+            this.lastName = admin.lastName;
+            this.email = admin.email;
+            this.password = admin.password;
             return this;
         }
 
-        public Builder copy(User user) {
-            this.userId = user.userId;
-            this.firstName = user.firstName;
-            this.middleName = user.middleName;
-            this.lastName = user.lastName;
-            this.email = user.email;
-            this.password = user.password;
-            this.phoneNumber = user.phoneNumber;
-            return this;
-        }
-
-        public User build() {
-            return new User(this);
+        public Admin build() {
+            return new Admin(this);
         }
     }
 }
